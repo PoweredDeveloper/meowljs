@@ -930,6 +930,15 @@ async function build() {
   const buildIndex = rootIndex.replace('</body>', `<script src="./bundle.js"></script></body>`)
   fs.writeFileSync(path.join(BUILD_DIR, 'index.html'), buildIndex)
 
+  const faviconPath = path.join(PROJECT_ROOT, 'favicon.svg')
+  if (fs.existsSync(faviconPath)) {
+    fs.copyFileSync(faviconPath, path.join(BUILD_DIR, 'favicon.svg'))
+  }
+  const stylesPath = path.join(PROJECT_ROOT, 'styles.css')
+  if (fs.existsSync(stylesPath)) {
+    fs.copyFileSync(stylesPath, path.join(BUILD_DIR, 'styles.css'))
+  }
+
   console.log('Build complete.')
 }
 

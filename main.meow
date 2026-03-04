@@ -1,0 +1,4 @@
+n = 0
+component Btn = <button onClick={n = n + 1}>+1</button>
+---
+<div><h1>{n}</h1><Btn /></div>

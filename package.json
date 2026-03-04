@@ -12,10 +12,16 @@
   },
   "scripts": {
     "build": "node compiler.js main.meow",
-    "build:hard": "node compiler.js hard.meow",
     "dev": "node cli.js dev",
     "create": "node cli.js create"
   },
+  "files": [
+    "compiler.js",
+    "cli.js",
+    "templates",
+    "docs",
+    "vscode-meow"
+  ],
   "keywords": [
     "framework",
     "reactive",

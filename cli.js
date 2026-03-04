@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict"
+'use strict'
 
 const { spawn } = require('child_process')
 const fs = require('fs')
@@ -14,7 +14,7 @@ const c = {
 }
 
 const MEOW = `
-  ${c.cyan('▄')} ${c.bold('MeowJS')} — minimal reactive UI
+  ${c.cyan('◆')} ${c.bold('MeowJS')} — minimal reactive UI
 `
 
 function runCompiler(entry, cwd) {
@@ -100,9 +100,14 @@ async function dev(entry, cwd) {
 
   watcher.on('change', () => build())
 
-  const { createServer } = require('serve-handler')
+  const handler = require('serve-handler')
   const http = require('http')
-  const server = http.createServer((req, res) => createServer(req, res, { public: path.join(root, 'build') }))
+  const server = http.createServer((req, res) =>
+    handler(req, res, { public: path.join(root, 'build') }).catch((err) => {
+      res.statusCode = 500
+      res.end(err.message)
+    }),
+  )
   const port = 3000
   server.listen(port, () => {
     console.log(`  ${c.green('→')} http://localhost:${port}\n`)
@@ -123,16 +128,16 @@ async function main() {
     console.log(MEOW)
     console.log(`
   ${c.bold('Usage:')}
-    meow create [name]   Create a new project
-    meow dev [entry]     Start dev server (default: main.meow)
-    meow build [entry]   Build for production (default: main.meow)
+    npx meow create [name]   Create a new project
+    npx meow dev [entry]     Start dev server (default: main.meow)
+    npx meow build [entry]   Build for production (default: main.meow)
 
   ${c.bold('Examples:')}
-    ${c.cyan('meow create my-app')}     Create project in ./my-app
-    ${c.cyan('meow create')}            Create project in current directory
-    ${c.cyan('meow dev')}               Start dev server
-    ${c.cyan('meow build')}             Build main.meow
-    ${c.cyan('meow build app.meow')}    Build app.meow
+    ${c.cyan('npx meow create my-app')}     Create project in ./my-app
+    ${c.cyan('npx meow create')}            Create project in current directory
+    ${c.cyan('npx meow dev')}               Start dev server
+    ${c.cyan('npx meow build')}             Build main.meow
+    ${c.cyan('npx meow build app.meow')}    Build app.meow
 `)
     return
   }

@@ -28,15 +28,10 @@ Then open http://localhost:3000 (dev) or `build/index.html` (build).
 ```
 meowjs/
 ├── cli.js            # CLI (create, dev, build)
-├── compiler.js       # Compiler (run with Node)
-├── main.meow         # Your app: prelude + template
-├── index.html        # Shell (must have <div id="root"></div>)
-├── templates/        # Project template for meow create
+├── compiler.js       # Compiler
+├── templates/       # Project template for meow create
 ├── docs/             # Documentation
-├── vscode-meow/      # VS Code syntax highlighting
-└── build/
-    ├── bundle.js     # Compiled output
-    └── index.html    # Build output
+└── vscode-meow/      # VS Code syntax highlighting
 ```
 
 ## CLI
