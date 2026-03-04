@@ -1,0 +1,13 @@
+{
+  "name": "create-meowjs",
+  "version": "0.1.0",
+  "description": "Create a new MeowJS project",
+  "bin": {
+    "create-meowjs": "index.js"
+  },
+  "dependencies": {
+    "meowjs": "^0.1.0"
+  },
+  "keywords": ["meowjs", "create", "scaffold"],
+  "license": "MIT"
+}

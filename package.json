@@ -1,0 +1,33 @@
+{
+  "name": "meowjs",
+  "version": "0.1.0",
+  "description": "Minimal reactive UI framework",
+  "main": "compiler.js",
+  "bin": {
+    "meow": "cli.js"
+  },
+  "exports": {
+    ".": "./compiler.js",
+    "./cli.js": "./cli.js"
+  },
+  "scripts": {
+    "build": "node compiler.js main.meow",
+    "build:hard": "node compiler.js hard.meow",
+    "dev": "node cli.js dev",
+    "create": "node cli.js create"
+  },
+  "keywords": [
+    "framework",
+    "reactive",
+    "ui",
+    "compiler"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^4.0.1",
+    "serve-handler": "^6.1.5"
+  },
+  "devDependencies": {
+    "terser": "^5.46.0"
+  }
+}

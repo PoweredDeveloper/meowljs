@@ -1,0 +1,2 @@
+---
+<button class="meow-btn" onClick={onClick}>{label}</button>

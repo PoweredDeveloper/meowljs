@@ -1,0 +1,21 @@
+counter = 0
+text = "meow"
+
+function greet = () => { console.log("Hello, " + text + "!") }
+
+component Btn from "./components/btn.meow"
+
+---
+
+<div class="app">
+  <h1>{text}</h1>
+  <p>Count: {counter}</p>
+  <div class="controls">
+    <Btn label="+" onClick={counter = counter + 1} />
+    <Btn label="-" onClick={counter = counter - 1} />
+  </div>
+  <p>
+    <input value={text} onInput={text = event.target.value} placeholder="Type here" />
+  </p>
+  <button onClick={greet}>Greet</button>
+</div>

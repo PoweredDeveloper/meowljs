@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style>
+      .meow-btn {
+        --meow-btn-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --meow-btn-hover: linear-gradient(135deg, #5a6fd6 0%, #6a4190 100%);
+        font-family: "DM Sans", system-ui, sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        padding: 0.6rem 1.25rem;
+        border: none;
+        border-radius: 0.5rem;
+        background: var(--meow-btn-bg);
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 14px rgba(102, 126, 234, 0.4);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .meow-btn:hover {
+        background: var(--meow-btn-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+      }
+      .meow-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+      }
+      .meow-card {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background: #f0f0f0;
+        margin: 0.5rem 0;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

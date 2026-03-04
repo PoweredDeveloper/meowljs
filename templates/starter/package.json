@@ -1,0 +1,12 @@
+{
+  "name": "meow-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "meow dev",
+    "build": "meow build"
+  },
+  "devDependencies": {
+    "meowjs": "^0.1.0"
+  }
+}
